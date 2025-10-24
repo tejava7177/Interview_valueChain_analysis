@@ -139,6 +139,6 @@ python src/generate_report.py        # 보고서(Markdown)
 
 ---
 
-## 결과 미리보기
+## 결과 미리보기 - 추가
 ![cooccurrence_network.png](outputs/figures/cooccurrence_network.png)
 ![heatmap_indices.png](outputs/figures/heatmap_indices.png)
