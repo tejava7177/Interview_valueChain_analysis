@@ -40,3 +40,8 @@ bamboo_value_chain_starter/
 10) `python src/generate_report.py` → Markdown 보고서 초안 생성
 
 > 일부 패키지(예: `kss`, `pandas`, `matplotlib`, `scikit-learn`, `networkx`) 설치가 필요할 수 있습니다.
+
+
+## 결과
+![cooccurrence_network.png](outputs/figures/cooccurrence_network.png)
+![heatmap_indices.png](outputs/figures/heatmap_indices.png)
