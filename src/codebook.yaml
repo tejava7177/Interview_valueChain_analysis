@@ -1,0 +1,174 @@
+# 코드북 예시(편집하여 사용하세요)
+# - code: 고유 코드명
+#   synonyms: 코드와 유사한 표현(정규식/키워드)
+#   vc_stage: 가치사슬 단계(아래 중 선택)
+#             inbound_logistics / operations / outbound_logistics / marketing_sales / service
+#             tech_dev / hr_mgmt / procurement / infrastructure
+#   polarity: -1(문제/리스크), 0(중립), +1(기회/강점)
+#   weight: 중요도 가중치(기본 1.0)
+
+- code: 수급_불안정
+  synonyms: ["수급 불안", "공급 불안정", "수요와 공급", "원자재 부족", "원자재 조달", "원료 확보 어려움", "원료 확보", "중국산 의존"]
+  vc_stage: inbound_logistics
+  polarity: -1
+  weight: 1.0
+
+- code: 자동화_부족
+  synonyms: ["자동화 설비 부족", "자동화 설비", "수작업 위주", "생산성 저하", "설비 노후화", "공정 효율 저하"]
+  vc_stage: operations
+  polarity: -1
+  weight: 1.0
+
+- code: 브랜드_인지도_부족
+  synonyms: ["브랜드 인지도 낮음", "브랜드 인지도", "온라인 홍보 부족", "디지털 마케팅 부족", "SNS 미활용", "유튜브 미활용", "쇼핑몰 미운영", "소비자 인식 부족"]
+  vc_stage: marketing_sales
+  polarity: -1
+  weight: 1.0
+
+- code: 고부가_제품_개발
+  synonyms: ["프리미엄", "고부가가치", "디자인 차별화", "기능성 제품"]
+  vc_stage: tech_dev
+  polarity: +1
+  weight: 1.2
+
+- code: 기술인력_부족
+  synonyms: ["숙련공 부족", "인력난", "인력 양성 필요"]
+  vc_stage: hr_mgmt
+  polarity: -1
+  weight: 1.0
+
+
+- code: 보관_건조_표준
+  synonyms: ["저온 보관", "건조 표준", "보관 규격", "수분 관리", "건조 시설", "보관 시설", "제습", "건조기", "건조 불량", "건조 공정", "장기 보관"]
+  vc_stage: operations
+  polarity: +1
+  weight: 1.1
+
+- code: 조달_공급_안정화
+  synonyms: ["안정적인 공급", "원자재 조달", "원료 확보", "공급 안정화", "공급 계약", "장기 계약", "계약 재배"]
+  vc_stage: inbound_logistics
+  polarity: +1
+  weight: 1.1
+
+- code: 공동구매_계약재배
+  synonyms: ["공동 구매", "공동구매", "계약 재배", "원료 공동조달"]
+  vc_stage: procurement
+  polarity: +1
+  weight: 1.1
+
+- code: 온라인_브랜딩_역량
+  synonyms: ["온라인 홍보", "브랜딩", "브랜드 인지도", "SNS", "유튜브", "YouTube", "인스타그램", "인스타", "쇼핑몰", "오픈마켓", "스마트스토어", "검색 노출", "SEO", "리뷰", "후기"]
+  vc_stage: marketing_sales
+  polarity: +1
+  weight: 1.0
+
+- code: 정책_지원_미흡
+  synonyms: ["지자체 지원", "사업 지원", "보조금", "정책 지원", "행정 연계", "지원 미흡", "규제", "규제 완화"]
+  vc_stage: infrastructure
+  polarity: -1
+  weight: 1.0
+
+- code: 표준_인증_체계
+  synonyms: ["표준 제정", "규격 표준", "인증", "ISO", "KS 인증", "품질 기준", "등급 제도", "표준화"]
+  vc_stage: infrastructure
+  polarity: +1
+  weight: 1.0
+
+- code: 기술개발_RnD
+  synonyms: ["신제품 개발", "연구 개발", "R&D", "디자인 개발", "기술 개발"]
+  vc_stage: tech_dev
+  polarity: +1
+  weight: 1.1
+
+- code: 숙련인력_전승
+  synonyms: ["숙련공", "기술 전승", "교육 훈련", "인력 양성", "장인", "무형문화재", "도제", "산학", "교육과정", "커리큘럼"]
+  vc_stage: hr_mgmt
+  polarity: +1
+  weight: 1.1
+
+- code: 유통_출고_물류
+  synonyms:
+    - "(주문|발주|납품|거래처).{0,20}(배송|발송|출고|택배|화물|운송)"
+    - "(배송|발송|출고|택배|화물|운송).{0,20}(주문|발주|납품|거래처)"
+    - "포장( 작업| 공정)?"
+  vc_stage: outbound_logistics
+  polarity: 0
+  weight: 1.0
+
+- code: 서비스_AS_유지보수
+  synonyms: ["AS", "A/S", "교환", "보증", "유지보수", "사후서비스"]
+  vc_stage: service
+  polarity: 0
+  weight: 1.0
+
+- code: 가격_변동성
+  synonyms: ["가격 변동", "가격 변동성", "가격 협상", "가격 책정", "가격 불안정", "원가 상승", "원가 변동", "단가", "시세"]
+  vc_stage: marketing_sales
+  polarity: -1
+  weight: 1.0
+
+- code: 수요_감소
+  synonyms: ["수요 감소", "수요 둔화", "판매 감소", "경기 침체"]
+  vc_stage: marketing_sales
+  polarity: -1
+  weight: 1.0
+
+- code: 규격_표준_부재
+  synonyms: ["규격 부재", "표준 부재", "품질 기준 없음", "등급 기준 없음", "사이즈 표준 없음"]
+  vc_stage: infrastructure
+  polarity: -1
+  weight: 1.0
+
+- code: 가공_기술
+  synonyms: ["가공 기술", "절단 공정", "가공 표준", "공정 효율", "가공 장비", "열처리", "습도 관리", "수분 관리", "갈라짐", "균열", "원형톱", "대패", "마디 제거"]
+  vc_stage: operations
+  polarity: +1
+  weight: 1.1
+
+- code: 재고_수요예측
+  synonyms: ["재고 관리", "재고 부족", "과잉 재고", "수요 예측", "발주 계획", "리드타임"]
+  vc_stage: operations
+  polarity: +1
+  weight: 1.0
+
+- code: 품질_검사_등급제
+  synonyms: ["품질 검사", "선별", "등급제", "검수", "QC", "검사 기준"]
+  vc_stage: operations
+  polarity: +1
+  weight: 1.0
+
+- code: 수출_해외시장
+  synonyms: ["수출", "해외 시장", "해외 판로", "바이어", "무역", "해외 전시"]
+  vc_stage: marketing_sales
+  polarity: +1
+  weight: 1.0
+
+- code: OEM_ODM_거래
+  synonyms: ["OEM", "ODM", "주문자 상표", "위탁 생산", "도급"]
+  vc_stage: marketing_sales
+  polarity: 0
+  weight: 1.0
+
+- code: 친환경_지속가능
+  synonyms: ["친환경", "지속 가능", "탄소", "환경 인증", "ESG", "바이오", "재생 가능"]
+  vc_stage: tech_dev
+  polarity: +1
+  weight: 1.0
+
+- code: 데이터_부족
+  synonyms: ["산업 데이터 부족", "통계 부재", "시장 데이터", "정보 비대칭"]
+  vc_stage: infrastructure
+  polarity: -1
+  weight: 1.0
+
+- code: 클러스터_네트워킹
+  synonyms: ["클러스터", "산학 연계", "협회", "네트워킹", "공동 연구", "컨소시엄"]
+  vc_stage: infrastructure
+  polarity: +1
+  weight: 1.0
+
+- code: 원산지_라벨링_신뢰
+  synonyms: ["원산지 표기", "원산지 라벨", "원산지 인증", "국산 브랜드", "국산 신뢰"]
+  vc_stage: infrastructure
+  polarity: 0
+  weight: 1.0
